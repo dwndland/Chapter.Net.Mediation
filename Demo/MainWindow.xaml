@@ -1,0 +1,207 @@
+﻿<Window x:Class="Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:demo="clr-namespace:Demo"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="800"
+        Height="450"
+        d:DataContext="{d:DesignInstance demo:MainWindow}"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Grid.Column="0">
+            <Button Margin="4"
+                    HorizontalAlignment="Left"
+                    Command="{Binding AddSenderCommand}"
+                    Content="Add Sync Sender"
+                    DockPanel.Dock="Top" />
+            <ListBox BorderThickness="0" ItemsSource="{Binding Sender}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="4"
+                                BorderBrush="Gray"
+                                BorderThickness="1"
+                                CornerRadius="8">
+                            <DockPanel Margin="4">
+                                <Button Width="24"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding DataContext.RemoveSenderCommand, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                                        CommandParameter="{Binding}"
+                                        Content="X"
+                                        DockPanel.Dock="Right" />
+                                <StackPanel HorizontalAlignment="Left">
+                                    <Button Command="{Binding PublishOneCommand}" Content="Send One" />
+                                    <Button Margin="0,4"
+                                            Command="{Binding PublishTwoCommand}"
+                                            Content="Send Two" />
+                                    <Button Command="{Binding PublishThreeCommand}" Content="Send Three" />
+                                </StackPanel>
+                            </DockPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+
+        <Border Grid.Row="0"
+                Grid.Column="1"
+                BorderBrush="Gray"
+                BorderThickness="1,0,0,0">
+            <DockPanel>
+                <Button Margin="4"
+                        HorizontalAlignment="Left"
+                        Command="{Binding AddReceiverCommand}"
+                        Content="Add Sync Receiver"
+                        DockPanel.Dock="Top" />
+                <ListBox BorderThickness="0" ItemsSource="{Binding Receiver}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="4"
+                                    BorderBrush="Gray"
+                                    BorderThickness="1"
+                                    CornerRadius="8">
+                                <DockPanel Margin="4">
+                                    <Button Width="24"
+                                            VerticalAlignment="Top"
+                                            Command="{Binding DataContext.RemoveReceiverCommand, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                                            CommandParameter="{Binding}"
+                                            Content="X"
+                                            DockPanel.Dock="Right" />
+                                    <StackPanel HorizontalAlignment="Left">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding One.IsSubscribed}" />
+                                            <TextBlock Margin="20,0"
+                                                       VerticalAlignment="Center"
+                                                       Text="Received:" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding One.ReceivedCount}" />
+                                        </StackPanel>
+                                        <StackPanel Margin="0,4" Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding Two.IsSubscribed}" />
+                                            <TextBlock Margin="20,0"
+                                                       VerticalAlignment="Center"
+                                                       Text="Received:" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Two.ReceivedCount}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding Three.IsSubscribed}" />
+                                            <TextBlock Margin="20,0"
+                                                       VerticalAlignment="Center"
+                                                       Text="Received:" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Three.ReceivedCount}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Border>
+
+        <DockPanel Grid.Row="1" Grid.Column="0">
+            <Button Margin="4"
+                    HorizontalAlignment="Left"
+                    Command="{Binding AddAsyncSenderCommand}"
+                    Content="Add Async Sender"
+                    DockPanel.Dock="Top" />
+            <ListBox BorderThickness="0" ItemsSource="{Binding AsyncSender}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="4"
+                                BorderBrush="Gray"
+                                BorderThickness="1"
+                                CornerRadius="8">
+                            <DockPanel Margin="4">
+                                <Button Width="24"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding DataContext.RemoveAsyncSenderCommand, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                                        CommandParameter="{Binding}"
+                                        Content="X"
+                                        DockPanel.Dock="Right" />
+                                <StackPanel HorizontalAlignment="Left">
+                                    <Button Command="{Binding PublishOneCommand}" Content="Send One" />
+                                    <Button Margin="0,4"
+                                            Command="{Binding PublishTwoCommand}"
+                                            Content="Send Two" />
+                                    <Button Command="{Binding PublishThreeCommand}" Content="Send Three" />
+                                </StackPanel>
+                            </DockPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                BorderBrush="Gray"
+                BorderThickness="1,0,0,0">
+            <DockPanel>
+                <Button Margin="4"
+                        HorizontalAlignment="Left"
+                        Command="{Binding AddAsyncReceiverCommand}"
+                        Content="Add Async Receiver"
+                        DockPanel.Dock="Top" />
+                <ListBox BorderThickness="0" ItemsSource="{Binding AsyncReceiver}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="4"
+                                    BorderBrush="Gray"
+                                    BorderThickness="1"
+                                    CornerRadius="8">
+                                <DockPanel Margin="4">
+                                    <Button Width="24"
+                                            VerticalAlignment="Top"
+                                            Command="{Binding DataContext.RemoveAsyncReceiverCommand, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                                            CommandParameter="{Binding}"
+                                            Content="X"
+                                            DockPanel.Dock="Right" />
+                                    <StackPanel HorizontalAlignment="Left">
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding One.IsSubscribed}" />
+                                            <TextBlock Margin="20,0"
+                                                       VerticalAlignment="Center"
+                                                       Text="Received:" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding One.ReceivedCount}" />
+                                        </StackPanel>
+                                        <StackPanel Margin="0,4" Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding Two.IsSubscribed}" />
+                                            <TextBlock Margin="20,0"
+                                                       VerticalAlignment="Center"
+                                                       Text="Received:" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Two.ReceivedCount}" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding Three.IsSubscribed}" />
+                                            <TextBlock Margin="20,0"
+                                                       VerticalAlignment="Center"
+                                                       Text="Received:" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Three.ReceivedCount}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Border>
+    </Grid>
+
+</Window>
