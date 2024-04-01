@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
-    <Version>1.0.0</Version>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.0;net45;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+    <Version>1.1.0</Version>
     <Authors>David Wendland</Authors>
     <Description>Chapter.Net.Mediation provides an implementation of the mediator pattern in the form of a sync and async message bus.</Description>
-    <Copyright>Copyright (c) 2023 David Wendland</Copyright>
+    <Copyright>Copyright (c) 2024 David Wendland</Copyright>
     <PackageProjectUrl>https://github.com/dwndland/Chapter.Net.Mediation</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

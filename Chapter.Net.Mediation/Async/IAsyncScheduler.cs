@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.Mediation;
-
-/// <summary>
-///     The scheduler where the <see cref="MessageBus" /> messages can be send over.
-/// </summary>
-public interface IAsyncScheduler
+namespace Chapter.Net.Mediation
 {
     /// <summary>
-    ///     Invokes the action.
+    ///     The scheduler where the <see cref="MessageBus" /> messages can be send over.
     /// </summary>
-    /// <param name="action">The action to invoke.</param>
-    /// <returns>The task to await</returns>
-    Task Invoke(Func<Task> action);
+    public interface IAsyncScheduler
+    {
+        /// <summary>
+        ///     Invokes the action.
+        /// </summary>
+        /// <param name="action">The action to invoke.</param>
+        /// <returns>The task to await</returns>
+        Task Invoke(Func<Task> action);
+    }
 }
