@@ -8,17 +8,16 @@ using System;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net.Mediation
+namespace Chapter.Net.Mediation;
+
+/// <summary>
+///     The scheduler where the <see cref="MessageBus" /> messages can be send over.
+/// </summary>
+public interface IScheduler
 {
     /// <summary>
-    ///     The scheduler where the <see cref="MessageBus" /> messages can be send over.
+    ///     Invokes the action.
     /// </summary>
-    public interface IScheduler
-    {
-        /// <summary>
-        ///     Invokes the action.
-        /// </summary>
-        /// <param name="action">The action to invoke.</param>
-        void Invoke(Action action);
-    }
+    /// <param name="action">The action to invoke.</param>
+    void Invoke(Action action);
 }

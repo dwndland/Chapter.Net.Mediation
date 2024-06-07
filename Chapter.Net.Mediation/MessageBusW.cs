@@ -4,16 +4,15 @@
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
 
-namespace Chapter.Net.Mediation
+namespace Chapter.Net.Mediation;
+
+/// <summary>
+///     Provides a static access to the IMessageBus if its not expected to be injected.
+/// </summary>
+public static class MessageBusW
 {
     /// <summary>
-    ///     Provides a static access to the IMessageBus if its not expected to be injected.
+    ///     Access to the message bus instance.
     /// </summary>
-    public static class MessageBusW
-    {
-        /// <summary>
-        ///     Access to the message bus instance.
-        /// </summary>
-        public static IMessageBus Instance { get; set; }
-    }
+    public static IMessageBus Instance { get; set; }
 }
