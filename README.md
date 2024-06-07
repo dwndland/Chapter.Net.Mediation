@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/dwndland/Chapter.Net.Mediation/master/Icon.png" alt="logo" width="64"/>
+<img src="https://raw.githubusercontent.com/dwndlnd/Chapter.Net.Mediation/master/Icon.png" alt="logo" width="64"/>
 
 # Chapter.Net.Mediation Library
 
@@ -43,7 +43,7 @@ Chapter.Net.Mediation provides an implementation of the mediator pattern in the 
 
 ## Links
 * [NuGet](https://www.nuget.org/packages/Chapter.Net.Mediation)
-* [GitHub](https://github.com/dwndland/Chapter.Net.Mediation)
+* [GitHub](https://github.com/dwndlnd/Chapter.Net.Mediation)
 
 ## License
 Copyright (c) David Wendland. All rights reserved.

@@ -6,7 +6,7 @@
     <Authors>David Wendland</Authors>
     <Description>Chapter.Net.Mediation provides an implementation of the mediator pattern in the form of a sync and async message bus.</Description>
     <Copyright>Copyright (c) 2024 David Wendland</Copyright>
-    <PackageProjectUrl>https://github.com/dwndland/Chapter.Net.Mediation</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/dwndlnd/Chapter.Net.Mediation</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
