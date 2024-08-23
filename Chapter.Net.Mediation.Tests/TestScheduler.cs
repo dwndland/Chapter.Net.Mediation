@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------------------------------------------
-// <copyright file="TestScheduler.cs" company="my-libraries">
+// <copyright file="TestScheduler.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
