@@ -4,8 +4,8 @@
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <Version>2.1.0</Version>
     <Authors>David Wendland</Authors>
-    <Description>Chapter.Net.Mediation provides an implementation of the mediator pattern in the form of a sync and async message bus.</Description>
-    <Copyright>Copyright (c) 2024 David Wendland</Copyright>
+    <Description>Chapter.Net.Mediation is a lightweight library that implements the mediator pattern to enable decoupled communication between components in .NET applications.</Description>
+    <Copyright>Copyright (c) 2025 David Wendland</Copyright>
     <PackageProjectUrl>https://github.com/dwndland/Chapter.Net.Mediation</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

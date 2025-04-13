@@ -3,7 +3,7 @@
 # Chapter.Net.Mediation Library
 
 ## Overview
-Chapter.Net.Mediation provides an implementation of the mediator pattern in the form of a sync and async message bus.
+Chapter.Net.Mediation is a lightweight library that implements the mediator pattern to enable decoupled communication between components in .NET applications.
 
 ## Features
 - **Send messages anonymously synchronously:** The IMessageBus can send and receive messages around synchronously.
